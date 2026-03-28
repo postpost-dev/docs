@@ -1,3 +1,4 @@
 {
-  "title": "upython"
+  "title": "Python",
+  "pages": ["quick-start", "bulk-csv-import"]
 }

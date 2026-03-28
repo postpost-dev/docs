@@ -1,3 +1,4 @@
 {
-  "title": "ujavascript"
+  "title": "JavaScript",
+  "pages": ["quick-start", "media-upload", "scheduling-workflows"]
 }

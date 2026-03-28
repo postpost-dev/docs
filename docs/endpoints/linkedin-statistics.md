@@ -1,5 +1,5 @@
 ---
-title: "LinkedIn Post Statistics"
+title: "LinkedIn Statistics"
 description: "Retrieve analytics for your LinkedIn posts: impressions, reach, reactions, comments, and reshares."
 ---
 
