@@ -1,3 +1,8 @@
+---
+title: "PostPost MCP Server"
+description: "Control PostPost directly from AI assistants like Claude Code, Claude Desktop, Cursor, and any MCP-compatible client. No coding required -- just describe what you want in plain English."
+---
+
 # PostPost MCP Server
 
 Control PostPost directly from AI assistants like Claude Code, Claude Desktop, Cursor, and any MCP-compatible client. No coding required -- just describe what you want in plain English.

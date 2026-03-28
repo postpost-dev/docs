@@ -1,0 +1,32 @@
+{
+  "title": "Guides",
+  "pages": [
+    "scheduling",
+    "bulk-scheduling",
+    "cross-platform",
+    "media-uploads",
+    "threading",
+    "twitter-threads",
+    "threads-multi-post",
+    "---Analytics---",
+    "analytics",
+    "linkedin-analytics",
+    "linkedin-reactions",
+    "linkedin-comments",
+    "linkedin-mentions",
+    "---Management---",
+    "update-scheduled-post",
+    "delete-scheduled-post",
+    "list-connected-accounts",
+    "workspace",
+    "---Reference---",
+    "error-handling",
+    "rate-limits",
+    "platform-limits",
+    "validation",
+    "---Integrations---",
+    "mcp-server",
+    "cursor-ai",
+    "x-bookmarks"
+  ]
+}

@@ -1,3 +1,8 @@
+---
+title: "Using PostPost with Cursor AI"
+description: "Get the most out of AI-assisted development when building with the PostPost API."
+---
+
 # Using PostPost with Cursor AI
 
 Get the most out of AI-assisted development when building with the PostPost API.

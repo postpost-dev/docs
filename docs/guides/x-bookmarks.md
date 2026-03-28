@@ -1,3 +1,8 @@
+---
+title: "How to Sync and Search Your X Bookmarks with PostPost"
+description: "Save, search, filter, and export your X (Twitter) bookmarks using the PostPost API. Media (images, videos) is automatically downloaded and stored for permanent access."
+---
+
 # How to Sync and Search Your X Bookmarks with PostPost
 
 Save, search, filter, and export your X (Twitter) bookmarks using the PostPost API. Media (images, videos) is automatically downloaded and stored for permanent access.

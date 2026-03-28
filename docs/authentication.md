@@ -1,3 +1,8 @@
+---
+title: "Authentication"
+description: "PostPost uses API keys for authentication. API keys are long-lived credentials that don't expire or require refresh tokens — unlike OAuth, there's no token exchange workflow."
+---
+
 # Authentication
 
 PostPost uses **API keys** for authentication. API keys are long-lived credentials that don't expire or require refresh tokens — unlike OAuth, there's no token exchange workflow.

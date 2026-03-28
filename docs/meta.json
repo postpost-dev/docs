@@ -1,0 +1,18 @@
+{
+  "title": "Documentation",
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "authentication",
+    "---API Endpoints---",
+    "...endpoints",
+    "---Platforms---",
+    "...platforms",
+    "---Guides---",
+    "...guides",
+    "---MCP Server---",
+    "...mcp",
+    "---Code Examples---",
+    "...examples"
+  ]
+}

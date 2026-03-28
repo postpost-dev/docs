@@ -1,3 +1,8 @@
+---
+title: "How to Delete a Scheduled Post Across All Platforms with PostPost"
+description: "Delete a scheduled post from Twitter, LinkedIn, Instagram, Threads, and any other platforms where it was scheduled—all in a single API call."
+---
+
 # How to Delete a Scheduled Post Across All Platforms with PostPost
 
 Delete a scheduled post from Twitter, LinkedIn, Instagram, Threads, and any other platforms where it was scheduled—all in a single API call.

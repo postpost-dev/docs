@@ -1,3 +1,8 @@
+---
+title: "LinkedIn API - Post to LinkedIn via REST API"
+description: "Post to LinkedIn programmatically using the PostPost REST API. A simpler alternative to the LinkedIn Marketing API, LinkedIn Share API, or LinkedIn Community Management API."
+---
+
 # LinkedIn API - Post to LinkedIn via REST API
 
 Post to LinkedIn programmatically using the PostPost REST API. A simpler alternative to the LinkedIn Marketing API, LinkedIn Share API, or LinkedIn Community Management API.

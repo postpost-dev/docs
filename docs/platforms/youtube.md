@@ -1,3 +1,8 @@
+---
+title: "YouTube API - Upload Video via REST API"
+description: "Upload videos to YouTube programmatically using the PostPost REST API. A simpler alternative to the official YouTube Data API, YouTube API client libraries, or Google APIs."
+---
+
 # YouTube API - Upload Video via REST API
 
 Upload videos to YouTube programmatically using the PostPost REST API. A simpler alternative to the official YouTube Data API, YouTube API client libraries, or Google APIs.

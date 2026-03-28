@@ -1,3 +1,8 @@
+---
+title: "Update Post"
+description: "Modify the scheduling time or status of an existing post. Updating a post group also updates all associated platform-specific posts."
+---
+
 # Update Post
 
 Modify the scheduling time or status of an existing post. Updating a post group also updates all associated platform-specific posts.

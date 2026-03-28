@@ -1,3 +1,8 @@
+---
+title: "How to Retrieve LinkedIn Analytics with PostPost"
+description: "Get engagement metrics (impressions, reactions, comments, shares) for your LinkedIn posts using the PostPost API."
+---
+
 # How to Retrieve LinkedIn Analytics with PostPost
 
 Get engagement metrics (impressions, reactions, comments, shares) for your LinkedIn posts using the PostPost API.

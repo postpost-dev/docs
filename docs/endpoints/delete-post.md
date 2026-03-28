@@ -1,3 +1,8 @@
+---
+title: "Delete Post"
+description: "Delete a post across all platforms where it was created. This endpoint removes the entire post group and all associated platform-specific posts in a single operation, regardless of the post's current "
+---
+
 # Delete Post
 
 Delete a post across all platforms where it was created. This endpoint removes the entire post group and all associated platform-specific posts in a single operation, regardless of the post's current status.

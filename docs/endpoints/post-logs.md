@@ -1,3 +1,8 @@
+---
+title: "Post Logs"
+description: "Get detailed publish attempt history for a post group. Useful for debugging failed posts and understanding the publish timeline."
+---
+
 # Post Logs
 
 Get detailed publish attempt history for a post group. Useful for debugging failed posts and understanding the publish timeline.

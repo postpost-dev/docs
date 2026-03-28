@@ -1,3 +1,8 @@
+---
+title: "TypeScript Quick Start"
+description: "Type-safe integration with the PostPost API using TypeScript and modern tooling."
+---
+
 # TypeScript Quick Start
 
 Type-safe integration with the PostPost API using TypeScript and modern tooling.

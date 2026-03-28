@@ -1,3 +1,8 @@
+---
+title: "Post Multiple Threads Posts via API - Threads Threading Guide"
+description: "Post multi-part threads (connected posts) to Meta's Threads platform programmatically using the PostPost REST API. Create threaded conversations without managing the Threads API complexity."
+---
+
 # Post Multiple Threads Posts via API - Threads Threading Guide
 
 Post multi-part threads (connected posts) to Meta's Threads platform programmatically using the PostPost REST API. Create threaded conversations without managing the Threads API complexity.

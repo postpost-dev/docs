@@ -1,3 +1,8 @@
+---
+title: "Getting Started with PostPost API"
+description: "PostPost API lets you schedule and publish social media posts across 10 platforms from a single REST endpoint. Base URL: `https://api.postpost.dev`"
+---
+
 # Getting Started with PostPost API
 
 ## Overview

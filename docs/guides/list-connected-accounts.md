@@ -1,3 +1,8 @@
+---
+title: "How to Retrieve Connected Social Media Accounts with PostPost"
+description: "List all connected social media accounts for a user, including token health status and platform metadata."
+---
+
 # How to Retrieve Connected Social Media Accounts with PostPost
 
 List all connected social media accounts for a user, including token health status and platform metadata.

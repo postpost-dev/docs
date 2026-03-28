@@ -1,3 +1,8 @@
+---
+title: "Facebook API - Post to Facebook Page via REST API"
+description: "Post to Facebook Pages programmatically using the PostPost REST API. A simpler alternative to the Facebook Graph API or Meta Marketing API."
+---
+
 # Facebook API - Post to Facebook Page via REST API
 
 Post to Facebook Pages programmatically using the PostPost REST API. A simpler alternative to the Facebook Graph API or Meta Marketing API.

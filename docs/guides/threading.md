@@ -1,3 +1,8 @@
+---
+title: "Threading Guide - Post Multi-Part Threads via API"
+description: "Learn how to post threads (multiple connected posts) to Twitter/X and Threads using the PostPost API. This guide covers automatic thread splitting, manual thread creation, and best practices."
+---
+
 # Threading Guide - Post Multi-Part Threads via API
 
 Learn how to post threads (multiple connected posts) to Twitter/X and Threads using the PostPost API. This guide covers automatic thread splitting, manual thread creation, and best practices.

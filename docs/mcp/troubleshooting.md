@@ -1,3 +1,8 @@
+---
+title: "MCP Troubleshooting Guide"
+description: "Common issues and solutions for PostPost MCP Server."
+---
+
 # MCP Troubleshooting Guide
 
 Common issues and solutions for PostPost MCP Server.

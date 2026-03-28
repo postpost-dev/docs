@@ -1,3 +1,8 @@
+---
+title: "Scheduling Posts"
+description: "This guide covers how to schedule social media posts through the PostPost API, including creating drafts, scheduling for specific times, and managing post lifecycles."
+---
+
 # Scheduling Posts
 
 This guide covers how to schedule social media posts through the PostPost API, including creating drafts, scheduling for specific times, and managing post lifecycles.

@@ -1,3 +1,8 @@
+---
+title: "How to Mention Users and Companies on LinkedIn with PostPost"
+description: "Create LinkedIn posts that @mention people and organizations using the PostPost API. Mentions become clickable links and trigger notifications."
+---
+
 # How to Mention Users and Companies on LinkedIn with PostPost
 
 Create LinkedIn posts that @mention people and organizations using the PostPost API. Mentions become clickable links and trigger notifications.

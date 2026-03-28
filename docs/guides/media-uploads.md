@@ -1,3 +1,8 @@
+---
+title: "Media Uploads"
+description: "This guide covers how to upload images and videos to PostPost using pre-signed S3 URLs, and how to attach media to your scheduled posts."
+---
+
 # Media Uploads
 
 This guide covers how to upload images and videos to PostPost using pre-signed S3 URLs, and how to attach media to your scheduled posts.

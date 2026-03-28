@@ -1,3 +1,8 @@
+---
+title: "JavaScript Quick Start"
+description: "Get started with the PostPost API in JavaScript. These examples use the native `fetch` API."
+---
+
 # JavaScript Quick Start
 
 Get started with the PostPost API in JavaScript. These examples use the native `fetch` API.

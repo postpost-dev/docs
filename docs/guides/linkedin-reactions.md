@@ -1,3 +1,8 @@
+---
+title: "How to Like and React to LinkedIn Posts with PostPost"
+description: "Add reactions (like, insightful, love, etc.) to LinkedIn posts programmatically using the PostPost API."
+---
+
 # How to Like and React to LinkedIn Posts with PostPost
 
 Add reactions (like, insightful, love, etc.) to LinkedIn posts programmatically using the PostPost API.

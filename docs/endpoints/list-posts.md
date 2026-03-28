@@ -1,3 +1,8 @@
+---
+title: "List Posts"
+description: "Retrieve a paginated list of all your scheduled, draft, published, and failed posts."
+---
+
 # List Posts
 
 Retrieve a paginated list of all your scheduled, draft, published, and failed posts.

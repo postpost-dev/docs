@@ -1,0 +1,22 @@
+{
+  "title": "API Endpoints",
+  "pages": [
+    "create-post",
+    "get-post",
+    "update-post",
+    "delete-post",
+    "list-posts",
+    "upload-media",
+    "platform-connections",
+    "test-connection",
+    "webhooks",
+    "post-logs",
+    "---LinkedIn---",
+    "linkedin-statistics",
+    "linkedin-reactions",
+    "linkedin-followers",
+    "linkedin-profile-summary",
+    "linkedin-feed-retrieval",
+    "linkedin-comments"
+  ]
+}

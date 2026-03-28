@@ -1,0 +1,10 @@
+{
+  "title": "MCP Server",
+  "pages": [
+    "client-setup",
+    "tools-reference",
+    "examples",
+    "openclaw",
+    "troubleshooting"
+  ]
+}

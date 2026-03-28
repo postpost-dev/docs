@@ -1,3 +1,8 @@
+---
+title: "Test Connection"
+description: "Validate that a platform connection is working before scheduling posts."
+---
+
 # Test Connection
 
 Validate that a platform connection is working before scheduling posts.

@@ -1,3 +1,8 @@
+---
+title: "Threads API - Post to Threads via REST API"
+description: "Post to Threads (by Meta) programmatically using the PostPost REST API. A simpler alternative to the official Threads API or Meta Graph API for Threads."
+---
+
 # Threads API - Post to Threads via REST API
 
 Post to Threads (by Meta) programmatically using the PostPost REST API. A simpler alternative to the official Threads API or Meta Graph API for Threads.

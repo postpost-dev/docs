@@ -1,3 +1,8 @@
+---
+title: "JavaScript Scheduling Workflows"
+description: "Advanced scheduling patterns for automating your social media content."
+---
+
 # JavaScript Scheduling Workflows
 
 Advanced scheduling patterns for automating your social media content.

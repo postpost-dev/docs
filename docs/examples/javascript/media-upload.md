@@ -1,3 +1,8 @@
+---
+title: "JavaScript Media Upload Examples"
+description: "Upload images and videos to PostPost using the pre-signed URL workflow."
+---
+
 # JavaScript Media Upload Examples
 
 Upload images and videos to PostPost using the pre-signed URL workflow.

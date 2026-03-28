@@ -1,3 +1,8 @@
+---
+title: "Telegram API - Post to Channel via REST API"
+description: "Post to Telegram channels and groups programmatically using the PostPost REST API. A simpler alternative to the Telegram Bot API, Telethon, Pyrogram, or MTProto libraries."
+---
+
 # Telegram API - Post to Channel via REST API
 
 Post to Telegram channels and groups programmatically using the PostPost REST API. A simpler alternative to the Telegram Bot API, Telethon, Pyrogram, or MTProto libraries.

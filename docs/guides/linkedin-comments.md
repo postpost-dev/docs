@@ -1,3 +1,8 @@
+---
+title: "How to Post Comments on LinkedIn with PostPost"
+description: "Post comments on LinkedIn posts programmatically using the PostPost API. Engage with your network automatically without manual interaction."
+---
+
 # How to Post Comments on LinkedIn with PostPost
 
 Post comments on LinkedIn posts programmatically using the PostPost API. Engage with your network automatically without manual interaction.

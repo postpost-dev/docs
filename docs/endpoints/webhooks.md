@@ -1,3 +1,8 @@
+---
+title: "Webhooks"
+description: "Receive real-time notifications when posts are published, fail, or when tokens are expiring."
+---
+
 # Webhooks
 
 Receive real-time notifications when posts are published, fail, or when tokens are expiring.
