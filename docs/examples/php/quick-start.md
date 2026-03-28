@@ -3,8 +3,6 @@ title: "PHP Quick Start"
 description: "Integrate PostPost API with PHP using cURL and modern PHP practices."
 ---
 
-# PHP Quick Start
-
 Integrate PostPost API with PHP using cURL and modern PHP practices.
 
 ## Requirements

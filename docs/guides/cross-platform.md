@@ -3,8 +3,6 @@ title: "Cross-Platform Posting"
 description: "This guide covers how to publish a single post to multiple social media platforms simultaneously through the PostPost API, including platform-specific behavior and content adaptation."
 ---
 
-# Cross-Platform Posting
-
 This guide covers how to publish a single post to multiple social media platforms simultaneously through the PostPost API, including platform-specific behavior and content adaptation.
 
 ## How It Works

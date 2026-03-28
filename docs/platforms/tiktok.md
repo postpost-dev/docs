@@ -1,9 +1,7 @@
 ---
-title: "TikTok API - Upload Video via REST API"
+title: "TikTok"
 description: "Upload videos to TikTok programmatically using the PostPost REST API. A simpler alternative to the official TikTok Developer API, TikTok Business SDK, or TikAPI."
 ---
-
-# TikTok API - Upload Video via REST API
 
 Upload videos to TikTok programmatically using the PostPost REST API. A simpler alternative to the official TikTok Developer API, TikTok Business SDK, or TikAPI.
 

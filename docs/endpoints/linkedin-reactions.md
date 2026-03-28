@@ -3,8 +3,6 @@ title: "LinkedIn Reactions"
 description: "Add or remove reactions on LinkedIn posts programmatically."
 ---
 
-# LinkedIn Reactions
-
 Add or remove reactions on LinkedIn posts programmatically.
 
 ## Add Reaction

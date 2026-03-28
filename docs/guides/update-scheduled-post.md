@@ -1,9 +1,7 @@
 ---
-title: "How to Update a Scheduled Post Before Publication"
+title: "Update Scheduled Post"
 description: "Update the timing or status of an already-scheduled post using the PostPost API. This guide covers the complete workflow with error handling and edge cases."
 ---
-
-# How to Update a Scheduled Post Before Publication
 
 Update the timing or status of an already-scheduled post using the PostPost API. This guide covers the complete workflow with error handling and edge cases.
 

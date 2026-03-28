@@ -3,8 +3,6 @@ title: "MCP Conversation Examples"
 description: "Real-world examples of using PostPost MCP with AI assistants like Claude, Cursor, and others."
 ---
 
-# MCP Conversation Examples
-
 Real-world examples of using PostPost MCP with AI assistants like Claude, Cursor, and others.
 
 ## Getting Started

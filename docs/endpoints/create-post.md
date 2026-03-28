@@ -3,8 +3,6 @@ title: "Create Post"
 description: "Schedule or immediately queue a post across multiple social media platforms."
 ---
 
-# Create Post
-
 Schedule or immediately queue a post across multiple social media platforms.
 
 ## Endpoint

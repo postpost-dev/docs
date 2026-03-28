@@ -3,8 +3,6 @@ title: "Bulk Scheduling Guide"
 description: "Schedule multiple posts at once using batch operations, CSV imports, and content calendars."
 ---
 
-# Bulk Scheduling Guide
-
 Schedule multiple posts at once using batch operations, CSV imports, and content calendars.
 
 ## Overview

@@ -3,8 +3,6 @@ title: "JavaScript Quick Start"
 description: "Get started with the PostPost API in JavaScript. These examples use the native `fetch` API."
 ---
 
-# JavaScript Quick Start
-
 Get started with the PostPost API in JavaScript. These examples use the native `fetch` API.
 
 ## Setup
@@ -150,7 +148,7 @@ async function main() {
 
   // 3. Create a post
   const result = await createPost(
-    'Testing the PostPost API - works great!',
+    'Testing the PostPost: works great!',
     platforms
   );
 

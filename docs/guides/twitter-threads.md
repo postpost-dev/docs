@@ -1,9 +1,7 @@
 ---
-title: "Post Twitter Threads via API - Tweet Thread Automation"
+title: "Post Twitter Threads via: Tweet Thread Automation"
 description: "Post tweet threads (tweetstorms) to X/Twitter programmatically using the PostPost REST API. A simpler alternative to manually chaining tweets with the Twitter API v2."
 ---
-
-# Post Twitter Threads via API - Tweet Thread Automation
 
 Post tweet threads (tweetstorms) to X/Twitter programmatically using the PostPost REST API. A simpler alternative to manually chaining tweets with the Twitter API v2.
 

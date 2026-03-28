@@ -3,8 +3,6 @@ title: "LinkedIn Followers"
 description: "Retrieve follower statistics for your LinkedIn account, including total follower count and daily growth data."
 ---
 
-# LinkedIn Followers
-
 Retrieve follower statistics for your LinkedIn account, including total follower count and daily growth data.
 
 ## Endpoint

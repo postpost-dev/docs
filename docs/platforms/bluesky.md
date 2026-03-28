@@ -1,9 +1,7 @@
 ---
-title: "Bluesky API / AT Protocol - Post to Bluesky via REST API"
+title: "Bluesky"
 description: "Post to Bluesky programmatically using the PostPost REST API. A simpler alternative to the AT Protocol (atproto) SDK or direct Bluesky API integration."
 ---
-
-# Bluesky API / AT Protocol - Post to Bluesky via REST API
 
 Post to Bluesky programmatically using the PostPost REST API. A simpler alternative to the AT Protocol (atproto) SDK or direct Bluesky API integration.
 

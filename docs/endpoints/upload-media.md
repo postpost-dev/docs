@@ -3,8 +3,6 @@ title: "Upload Media"
 description: "Upload images and videos to attach to posts. Uses pre-signed S3 URLs for direct uploads."
 ---
 
-# Upload Media
-
 Upload images and videos to attach to posts. Uses pre-signed S3 URLs for direct uploads.
 
 ## Endpoint

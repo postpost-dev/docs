@@ -3,8 +3,6 @@ title: "MCP Client Setup Guide"
 description: "Detailed setup instructions for connecting PostPost MCP to different AI clients."
 ---
 
-# MCP Client Setup Guide
-
 Detailed setup instructions for connecting PostPost MCP to different AI clients.
 
 ## Prerequisites

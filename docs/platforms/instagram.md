@@ -1,9 +1,7 @@
 ---
-title: "Instagram API - Post to Instagram via REST API"
+title: "Instagram"
 description: "Post to Instagram programmatically using the PostPost REST API. A simpler alternative to the Instagram Graph API, Instagram Basic Display API, or Instagrapi."
 ---
-
-# Instagram API - Post to Instagram via REST API
 
 Post to Instagram programmatically using the PostPost REST API. A simpler alternative to the Instagram Graph API, Instagram Basic Display API, or Instagrapi.
 

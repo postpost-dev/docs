@@ -1,9 +1,7 @@
 ---
-title: "Mastodon API - Post to Fediverse via REST API"
+title: "Mastodon"
 description: "Post to Mastodon and the Fediverse programmatically using the PostPost REST API. A simpler alternative to the official Mastodon API, Megalodon, or direct ActivityPub integration."
 ---
-
-# Mastodon API - Post to Fediverse via REST API
 
 Post to Mastodon and the Fediverse programmatically using the PostPost REST API. A simpler alternative to the official Mastodon API, Megalodon, or direct ActivityPub integration.
 

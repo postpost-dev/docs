@@ -3,8 +3,6 @@ title: "LinkedIn Profile Summary"
 description: "Retrieve a summary of your LinkedIn profile analytics including follower counts and aggregated post engagement metrics."
 ---
 
-# LinkedIn Profile Summary
-
 Retrieve a summary of your LinkedIn profile analytics including follower counts and aggregated post engagement metrics.
 
 ## Endpoint

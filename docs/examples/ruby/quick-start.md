@@ -3,8 +3,6 @@ title: "Ruby Quick Start"
 description: "Integrate PostPost API with Ruby using Net::HTTP or popular gems."
 ---
 
-# Ruby Quick Start
-
 Integrate PostPost API with Ruby using Net::HTTP or popular gems.
 
 ## Using Net::HTTP (No Dependencies)

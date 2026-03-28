@@ -3,8 +3,6 @@ title: "LinkedIn Post Statistics"
 description: "Retrieve analytics for your LinkedIn posts: impressions, reach, reactions, comments, and reshares."
 ---
 
-# LinkedIn Post Statistics
-
 Retrieve analytics for your LinkedIn posts: impressions, reach, reactions, comments, and reshares.
 
 ## Endpoint

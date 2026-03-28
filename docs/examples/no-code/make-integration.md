@@ -3,8 +3,6 @@ title: "Make (Integromat) Integration Guide"
 description: "Connect PostPost to 1,000+ apps using Make's HTTP module."
 ---
 
-# Make (Integromat) Integration Guide
-
 Connect PostPost to 1,000+ apps using Make's HTTP module.
 
 ## Overview

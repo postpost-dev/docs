@@ -3,8 +3,6 @@ title: "LinkedIn Analytics Guide"
 description: "Track the performance of your LinkedIn posts with PostPost's analytics endpoints."
 ---
 
-# LinkedIn Analytics Guide
-
 Track the performance of your LinkedIn posts with PostPost's analytics endpoints.
 
 ## Overview

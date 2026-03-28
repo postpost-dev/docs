@@ -3,8 +3,6 @@ title: "Python Quick Start"
 description: "Get started with the PostPost API using Python and the `requests` library."
 ---
 
-# Python Quick Start
-
 Get started with the PostPost API using Python and the `requests` library.
 
 ## Installation
@@ -195,7 +193,7 @@ def main():
         f'{BASE_URL}/create-post',
         headers=headers,
         json={
-            'content': 'Testing the PostPost API - works great!',
+            'content': 'Testing the PostPost: works great!',
             'platforms': platform_ids
         }
     )

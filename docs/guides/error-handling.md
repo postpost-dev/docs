@@ -3,8 +3,6 @@ title: "Error Handling"
 description: "This guide covers how to handle errors from the PostPost API, including HTTP status codes, error response formats, retry strategies, and dealing with partial failures."
 ---
 
-# Error Handling
-
 This guide covers how to handle errors from the PostPost API, including HTTP status codes, error response formats, retry strategies, and dealing with partial failures.
 
 ## How It Works

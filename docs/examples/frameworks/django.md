@@ -3,8 +3,6 @@ title: "Django Integration"
 description: "Build social media features into your Django app with PostPost API."
 ---
 
-# Django Integration
-
 Build social media features into your Django app with PostPost API.
 
 ## Installation

@@ -3,8 +3,6 @@ title: "Rate Limits and Optimal Posting Times"
 description: "This guide covers platform-specific rate limits, PostPost API rate limits, and strategies for scheduling posts at optimal engagement times."
 ---
 
-# Rate Limits and Optimal Posting Times
-
 This guide covers platform-specific rate limits, PostPost API rate limits, and strategies for scheduling posts at optimal engagement times.
 
 ## Quick Start: High-Volume Multi-Platform Scheduling

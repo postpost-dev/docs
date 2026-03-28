@@ -1,9 +1,7 @@
 ---
-title: "LinkedIn Feed Retrieval API"
+title: "LinkedIn Feed"
 description: "Retrieve your LinkedIn posts, comments, and reactions via the PostPost API."
 ---
-
-# LinkedIn Feed Retrieval API
 
 > **NOT YET AVAILABLE** -- These endpoints are **completely disabled** and return **HTTP 404 (Not Found)**. The underlying route handlers are commented out in the source code, so the routes do not exist. They require the `r_member_social` permission, which is **RESTRICTED** and requires LinkedIn approval. All request/response formats documented below are **planned and speculative** -- they are not based on a working implementation and may change when the feature is built. Do not attempt to call these endpoints; they will return a 404 error.
 

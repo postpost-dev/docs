@@ -3,8 +3,6 @@ title: "Platform Connections"
 description: "List all connected social media accounts."
 ---
 
-# Platform Connections
-
 List all connected social media accounts.
 
 ## Endpoint

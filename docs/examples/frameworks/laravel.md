@@ -3,8 +3,6 @@ title: "Laravel Integration"
 description: "Build social media features into your Laravel app with PostPost API."
 ---
 
-# Laravel Integration
-
 Build social media features into your Laravel app with PostPost API.
 
 ## Installation

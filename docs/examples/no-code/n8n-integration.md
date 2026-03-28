@@ -3,8 +3,6 @@ title: "n8n Integration Guide"
 description: "Connect PostPost to 400+ apps using n8n's HTTP Request node."
 ---
 
-# n8n Integration Guide
-
 Connect PostPost to 400+ apps using n8n's HTTP Request node.
 
 ## Overview

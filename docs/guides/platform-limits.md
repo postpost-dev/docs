@@ -3,8 +3,6 @@ title: "Platform Limits Reference"
 description: "This comprehensive guide documents the limits for all 10 social media platforms supported by PostPost. Understanding these limits is essential for building reliable integrations with the PostPost API."
 ---
 
-# Platform Limits Reference
-
 This comprehensive guide documents the limits for all 10 social media platforms supported by PostPost. Understanding these limits is essential for building reliable integrations with the PostPost API.
 
 **Last Updated:** March 2026
@@ -356,7 +354,7 @@ The PostPost validation system returns standardized error codes when content doe
 Official platform documentation used to compile these limits:
 
 - [Twitter/X Developer Community](https://devcommunity.x.com/t/unable-to-post-videos-longer-than-2-minutes-via-post-2-tweets/248440)
-- [Instagram Graph API - Content Publishing](https://developers.facebook.com/docs/instagram-platform/content-publishing/)
+- [Instagram Graph: Content Publishing](https://developers.facebook.com/docs/instagram-platform/content-publishing/)
 - [TikTok Content Posting API](https://developers.tiktok.com/doc/content-posting-api-reference-direct-post)
 - [LinkedIn Videos API](https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api)
 - [Facebook Graph API](https://developers.facebook.com/docs/graph-api/)

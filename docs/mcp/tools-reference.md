@@ -3,8 +3,6 @@ title: "MCP Tools Reference"
 description: "Complete reference for all 18 active PostPost MCP tools with parameters, examples, and code snippets. Three additional tools (`linkedin_posts`, `linkedin_post_comments`, `linkedin_post_reactions`) are"
 ---
 
-# MCP Tools Reference
-
 Complete reference for all 18 active PostPost MCP tools with parameters, examples, and code snippets. Three additional tools (`linkedin_posts`, `linkedin_post_comments`, `linkedin_post_reactions`) are temporarily disabled pending LinkedIn approval of the `r_member_social` permission — see [LinkedIn Feed Retrieval Tools](#linkedin-feed-retrieval-tools-coming-soon--requires-linkedin-approval) below.
 
 > **Note:** Most tools return the full `{ success, ... }` backend API response as shown in the examples below. A few tools — `list_connections`, `list_workspace_users`, and `create_workspace_user` — return a different response shape (e.g., an array or object without the `success` wrapper) because the underlying API endpoints use a different response format. The MCP server does not do any post-processing on responses. The response examples below reflect the actual format returned by each tool.

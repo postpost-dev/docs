@@ -3,8 +3,6 @@ title: "Get Post"
 description: "Retrieve details and publishing status of a post group."
 ---
 
-# Get Post
-
 Retrieve details and publishing status of a post group.
 
 ## Endpoint

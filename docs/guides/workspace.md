@@ -3,8 +3,6 @@ title: "Workspace / B2B API"
 description: "This guide covers how to use the PostPost Workspace API to manage multiple users under your account. This is designed for B2B integrations where you need to create and manage social media posting on b"
 ---
 
-# Workspace / B2B API
-
 > **Note:** Workspace access is not enabled by default. Contact PostPost support at **serge@postpost.dev** to enable Workspace API access for your account.
 
 This guide covers how to use the PostPost Workspace API to manage multiple users under your account. This is designed for B2B integrations where you need to create and manage social media posting on behalf of your customers.

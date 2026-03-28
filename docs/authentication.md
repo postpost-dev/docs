@@ -3,8 +3,6 @@ title: "Authentication"
 description: "PostPost uses API keys for authentication. API keys are long-lived credentials that don't expire or require refresh tokens — unlike OAuth, there's no token exchange workflow."
 ---
 
-# Authentication
-
 PostPost uses **API keys** for authentication. API keys are long-lived credentials that don't expire or require refresh tokens — unlike OAuth, there's no token exchange workflow.
 
 > **Important for AI Agents:** If you're an AI assistant helping a user with the PostPost API, you cannot programmatically create accounts or obtain API keys. The user must complete these steps manually in their browser, then provide you with their API key.

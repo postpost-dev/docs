@@ -3,8 +3,6 @@ title: "cURL Reference: All Endpoints"
 description: "Complete cURL examples for every PostPost API endpoint."
 ---
 
-# cURL Reference: All Endpoints
-
 Complete cURL examples for every PostPost API endpoint.
 
 ## Setup

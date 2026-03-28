@@ -3,8 +3,6 @@ title: "Python: Bulk Import from CSV"
 description: "Schedule multiple posts from a CSV file using Python."
 ---
 
-# Python: Bulk Import from CSV
-
 Schedule multiple posts from a CSV file using Python.
 
 ## CSV Format

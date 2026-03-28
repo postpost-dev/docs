@@ -1,9 +1,7 @@
 ---
-title: "Twitter API / X API - Post Tweets via REST API"
+title: "X (Twitter)"
 description: "Post to Twitter (X) programmatically using the PostPost REST API. A simpler alternative to the official Twitter API v2, Tweepy, node-twitter-api-v2, or Twitter Java SDK."
 ---
-
-# Twitter API / X API - Post Tweets via REST API
 
 Post to Twitter (X) programmatically using the PostPost REST API. A simpler alternative to the official Twitter API v2, Tweepy, node-twitter-api-v2, or Twitter Java SDK.
 
