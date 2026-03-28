@@ -1,5 +1,5 @@
 ---
-title: "Post Validation"
+title: "Validation"
 description: "This guide covers how PostPost validates posts before scheduling to prevent publish failures, including what gets validated, the validation response format, error codes, and best practices for avoidin"
 ---
 

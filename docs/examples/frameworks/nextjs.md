@@ -1,5 +1,5 @@
 ---
-title: "Next.js Integration"
+title: "Next.js"
 description: "Build social media features into your Next.js app with PostPost API."
 ---
 

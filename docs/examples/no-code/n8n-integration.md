@@ -1,5 +1,5 @@
 ---
-title: "n8n Integration Guide"
+title: "n8n"
 description: "Connect PostPost to 400+ apps using n8n's HTTP Request node."
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Workspace / B2B API"
+title: "Workspace / B2B"
 description: "This guide covers how to use the PostPost Workspace API to manage multiple users under your account. This is designed for B2B integrations where you need to create and manage social media posting on b"
 ---
 

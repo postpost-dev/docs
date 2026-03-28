@@ -1,5 +1,5 @@
 ---
-title: "Platform Limits Reference"
+title: "Platform Limits"
 description: "This comprehensive guide documents the limits for all 10 social media platforms supported by PostPost. Understanding these limits is essential for building reliable integrations with the PostPost API."
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "PHP Quick Start"
+title: "PHP"
 description: "Integrate PostPost API with PHP using cURL and modern PHP practices."
 ---
 

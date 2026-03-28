@@ -1,5 +1,5 @@
 ---
-title: "LinkedIn Analytics Guide"
+title: "Analytics"
 description: "Track the performance of your LinkedIn posts with PostPost's analytics endpoints."
 ---
 

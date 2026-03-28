@@ -1,5 +1,5 @@
 ---
-title: "Bulk Scheduling Guide"
+title: "Bulk Scheduling"
 description: "Schedule multiple posts at once using batch operations, CSV imports, and content calendars."
 ---
 

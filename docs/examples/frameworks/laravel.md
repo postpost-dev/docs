@@ -1,5 +1,5 @@
 ---
-title: "Laravel Integration"
+title: "Laravel"
 description: "Build social media features into your Laravel app with PostPost API."
 ---
 

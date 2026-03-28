@@ -1,5 +1,5 @@
 ---
-title: "MCP Client Setup Guide"
+title: "Client Setup"
 description: "Detailed setup instructions for connecting PostPost MCP to different AI clients."
 ---
 

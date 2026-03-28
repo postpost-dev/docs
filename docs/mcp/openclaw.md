@@ -1,5 +1,5 @@
 ---
-title: "OpenClaw AI Agent Integration"
+title: "OpenClaw"
 description: "Connect [OpenClaw](https://docs.openclaw.ai) (open-source autonomous AI agent) to PostPost for multi-platform social media posting."
 ---
 

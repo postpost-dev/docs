@@ -1,5 +1,5 @@
 ---
-title: "JavaScript Quick Start"
+title: "JavaScript"
 description: "Get started with the PostPost API in JavaScript. These examples use the native `fetch` API."
 ---
 

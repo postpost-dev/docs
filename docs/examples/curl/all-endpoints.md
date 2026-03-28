@@ -1,5 +1,5 @@
 ---
-title: "cURL Reference: All Endpoints"
+title: "cURL"
 description: "Complete cURL examples for every PostPost API endpoint."
 ---
 

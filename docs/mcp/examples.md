@@ -1,5 +1,5 @@
 ---
-title: "MCP Conversation Examples"
+title: "Examples"
 description: "Real-world examples of using PostPost MCP with AI assistants like Claude, Cursor, and others."
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Python Quick Start"
+title: "Python"
 description: "Get started with the PostPost API using Python and the `requests` library."
 ---
 

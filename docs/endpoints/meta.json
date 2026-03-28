@@ -5,18 +5,17 @@
     "get-post",
     "update-post",
     "delete-post",
-    "list-posts",
     "upload-media",
     "platform-connections",
-    "test-connection",
-    "webhooks",
-    "post-logs",
-    "---LinkedIn---",
+    "list-posts",
     "linkedin-statistics",
     "linkedin-reactions",
     "linkedin-followers",
     "linkedin-profile-summary",
     "linkedin-feed-retrieval",
-    "linkedin-comments"
+    "linkedin-comments",
+    "post-logs",
+    "test-connection",
+    "webhooks"
   ]
 }

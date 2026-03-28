@@ -1,5 +1,5 @@
 ---
-title: "Ruby Quick Start"
+title: "Ruby"
 description: "Integrate PostPost API with Ruby using Net::HTTP or popular gems."
 ---
 

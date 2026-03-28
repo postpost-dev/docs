@@ -1,5 +1,5 @@
 ---
-title: "Make (Integromat) Integration Guide"
+title: "Make (Integromat)"
 description: "Connect PostPost to 1,000+ apps using Make's HTTP module."
 ---
 

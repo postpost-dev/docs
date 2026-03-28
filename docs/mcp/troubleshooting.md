@@ -1,5 +1,5 @@
 ---
-title: "MCP Troubleshooting Guide"
+title: "Troubleshooting"
 description: "Common issues and solutions for PostPost MCP Server."
 ---
 

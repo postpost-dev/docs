@@ -1,13 +1,13 @@
 {
-  "title": "Platforms",
+  "title": "Platform Guides",
   "pages": [
     "linkedin",
     "x-twitter",
+    "facebook",
     "instagram",
     "threads",
     "tiktok",
     "youtube",
-    "facebook",
     "bluesky",
     "mastodon",
     "telegram"

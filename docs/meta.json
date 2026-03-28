@@ -1,18 +1,28 @@
 {
   "title": "Documentation",
   "pages": [
-    "---Getting Started---",
+    "---Overview---",
     "getting-started",
     "authentication",
     "---API Endpoints---",
     "...endpoints",
-    "---Platforms---",
+    "---Platform Guides---",
     "...platforms",
     "---Guides---",
     "...guides",
-    "---MCP Server---",
-    "...mcp",
     "---Code Examples---",
-    "...examples"
+    "...examples/javascript",
+    "...examples/typescript",
+    "...examples/python",
+    "...examples/php",
+    "...examples/ruby",
+    "...examples/go",
+    "...examples/curl",
+    "---Framework Examples---",
+    "...examples/frameworks",
+    "---MCP Integration---",
+    "...mcp",
+    "---No-Code Integrations---",
+    "...examples/no-code"
   ]
 }

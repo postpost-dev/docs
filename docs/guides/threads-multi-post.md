@@ -1,5 +1,5 @@
 ---
-title: "Post Multiple Threads Posts via: Threads Threading Guide"
+title: "Threads Multi-Post"
 description: "Post multi-part threads (connected posts) to Meta's Threads platform programmatically using the PostPost REST API. Create threaded conversations without managing the Threads API complexity."
 ---
 

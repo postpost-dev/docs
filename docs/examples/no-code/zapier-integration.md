@@ -1,5 +1,5 @@
 ---
-title: "Zapier Integration Guide"
+title: "Zapier"
 description: "Connect PostPost to 5,000+ apps using Zapier's Webhooks feature."
 ---
 

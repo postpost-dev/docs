@@ -1,5 +1,5 @@
 ---
-title: "Go Quick Start"
+title: "Go"
 description: "Integrate PostPost API with Go using the standard library and best practices."
 ---
 

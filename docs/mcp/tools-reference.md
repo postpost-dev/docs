@@ -1,5 +1,5 @@
 ---
-title: "MCP Tools Reference"
+title: "Tools Reference"
 description: "Complete reference for all 18 active PostPost MCP tools with parameters, examples, and code snippets. Three additional tools (`linkedin_posts`, `linkedin_post_comments`, `linkedin_post_reactions`) are"
 ---
 

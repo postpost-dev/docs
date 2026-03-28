@@ -1,5 +1,5 @@
 ---
-title: "Rate Limits and Optimal Posting Times"
+title: "Rate Limits"
 description: "This guide covers platform-specific rate limits, PostPost API rate limits, and strategies for scheduling posts at optimal engagement times."
 ---
 

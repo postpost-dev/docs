@@ -1,5 +1,5 @@
 ---
-title: "Django Integration"
+title: "Django"
 description: "Build social media features into your Django app with PostPost API."
 ---
 
