@@ -1,0 +1,424 @@
+# Twitter API / X API - Post Tweets via REST API
+
+Post to Twitter (X) programmatically using the PostPost REST API. A simpler alternative to the official Twitter API v2, Tweepy, node-twitter-api-v2, or Twitter Java SDK.
+
+## Twitter API Overview
+
+PostPost provides a unified REST API for posting tweets to X (formerly Twitter), including text posts, media attachments, images, videos, and automatic thread splitting for long-form content. No need to manage OAuth tokens, API rate limits, or complex Twitter API authentication flows.
+
+### Why Use PostPost Instead of Twitter API v2 / Tweepy / node-twitter-api-v2?
+
+| Feature | PostPost API | Twitter API v2 / Tweepy |
+|---------|-------------|-------------------------|
+| Authentication | Single API key | Complex OAuth 2.0 flow |
+| Rate limit handling | Automatic | Manual implementation |
+| Thread creation | Automatic splitting | Manual tweet chaining |
+| Multi-platform | Post to 11 platforms | Twitter only |
+| Setup time | 5 minutes | Hours to days |
+| Pricing | Free tier available; paid plan required for X | Free tier + paid tiers |
+
+### Keywords: Twitter API, X API, post tweet API, Twitter posting API, tweet programmatically, Twitter bot API, Twitter automation API, send tweet API, Twitter REST API, Twitter developer API
+
+## Platform ID Format
+
+```
+twitter-{userId}
+```
+
+Where `{userId}` is your X/Twitter numeric user ID assigned during account connection.
+
+## Requirements
+
+- An X/Twitter account connected via OAuth through the PostPost dashboard
+- API key from PostPost
+- **Paid PostPost plan** (Pro or Premium) — Twitter/X is excluded from the Starter plan
+
+## Supported Content
+
+| Type | Supported | Limits |
+|------|-----------|--------|
+| Text | Yes | 280 characters |
+| Images | Yes | Up to 4 per post, auto-converted to PNG (max 1000px width) |
+| Videos | Yes | MP4, MOV format |
+| Threads | Yes | Auto-split with `(1/N)` markers |
+
+## Character Counting
+
+X has specific rules for character counting that PostPost handles automatically:
+
+- Standard characters count as 1
+- Emojis count as **2 characters**
+- URLs are counted by their literal length (PostPost does NOT apply Twitter's 23-character URL shortening rule)
+- PostPost calculates the character count before posting
+
+## Threading
+
+When your content exceeds the character limit, PostPost automatically splits it into a thread (multiple connected tweets):
+
+### How It Works
+
+PostPost uses the official X API v2 `reply.in_reply_to_tweet_id` parameter to chain tweets together. Each subsequent tweet is posted as a reply to the previous one, creating a connected thread.
+
+**Technical flow:**
+1. First tweet is published normally via `POST /2/tweets`
+2. Each subsequent tweet is published with `reply.in_reply_to_tweet_id` set to the previous tweet's ID
+3. All tweets share the same `conversation_id` (equals the first tweet's ID)
+
+### Automatic Splitting
+
+When content exceeds the 280-character limit, PostPost automatically:
+
+- Splits at paragraph breaks (`\n\n`) when possible
+- Falls back to sentence boundaries (`. `, `! `, `? `)
+- Falls back to word boundaries if needed
+- Adds `(1/N)` markers at the end of each tweet (e.g., `(1/3)`, `(2/3)`, `(3/3)`)
+- Reserves 10 characters per tweet for the marker
+
+> **Note:** PostPost auto-converts all images to PNG and resizes them to a maximum of 1000px width using sharp before uploading.
+
+### Manual Thread Parts
+
+You can manually define where thread breaks should occur using either method:
+
+**Method 1: Triple dash separator**
+```
+This is my first tweet in the thread.
+
+---
+
+This is my second tweet in the thread.
+
+---
+
+And this is my third tweet!
+```
+
+**Method 2: Explicit markers**
+```
+First part of the thread [1/3]
+
+Second part of the thread [2/3]
+
+Third and final part [3/3]
+```
+
+When explicit markers are detected, PostPost preserves them exactly as written and splits at those points. Use square brackets `[n/m]`, which is distinct from the auto-added numbering format `(1/N)` that uses parentheses.
+
+### Media in Threads
+
+- **Images:** Up to 4 images attached to the first tweet only
+- **Video:** Single video attached to the first tweet only
+- Subsequent tweets in the thread are text-only
+- Images and video cannot be combined in the same tweet
+
+## Examples
+
+### Post a Text Update
+
+**JavaScript (fetch)**
+
+```javascript
+const response = await fetch('https://api.postpost.dev/api/v1/create-post', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': 'YOUR_API_KEY'
+  },
+  body: JSON.stringify({
+    content: 'Hello from PostPost! Posting to X has never been easier.',
+    platforms: ['twitter-12345678']
+  })
+});
+
+const data = await response.json();
+console.log(data);
+// Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+**Python (requests)**
+
+```python
+import requests
+
+response = requests.post(
+    'https://api.postpost.dev/api/v1/create-post',
+    headers={
+        'Content-Type': 'application/json',
+        'x-api-key': 'YOUR_API_KEY'
+    },
+    json={
+        'content': 'Hello from PostPost! Posting to X has never been easier.',
+        'platforms': ['twitter-12345678']
+    }
+)
+
+data = response.json()
+print(data)
+# Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+**cURL**
+
+```bash
+curl -X POST https://api.postpost.dev/api/v1/create-post \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "content": "Hello from PostPost! Posting to X has never been easier.",
+    "platforms": ["twitter-12345678"]
+  }'
+# Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+**Node.js (axios)**
+
+```javascript
+const axios = require('axios');
+
+const response = await axios.post('https://api.postpost.dev/api/v1/create-post', {
+  content: 'Hello from PostPost! Posting to X has never been easier.',
+  platforms: ['twitter-12345678']
+}, {
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': 'YOUR_API_KEY'
+  }
+});
+
+console.log(response.data);
+// Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+### Post with an Image
+
+**JavaScript (fetch)**
+
+```javascript
+const response = await fetch('https://api.postpost.dev/api/v1/create-post', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': 'YOUR_API_KEY'
+  },
+  body: JSON.stringify({
+    content: 'Check out this screenshot of our new dashboard!',
+    platforms: ['twitter-12345678']
+  })
+});
+
+const data = await response.json();
+console.log(data);
+// Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+**Python (requests)**
+
+```python
+import requests
+
+response = requests.post(
+    'https://api.postpost.dev/api/v1/create-post',
+    headers={
+        'Content-Type': 'application/json',
+        'x-api-key': 'YOUR_API_KEY'
+    },
+    json={
+        'content': 'Check out this screenshot of our new dashboard!',
+        'platforms': ['twitter-12345678']
+    }
+)
+
+data = response.json()
+print(data)
+# Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+**cURL**
+
+```bash
+curl -X POST https://api.postpost.dev/api/v1/create-post \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "content": "Check out this screenshot of our new dashboard!",
+    "platforms": ["twitter-12345678"]
+  }'
+# Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+**Node.js (axios)**
+
+```javascript
+const axios = require('axios');
+
+const response = await axios.post('https://api.postpost.dev/api/v1/create-post', {
+  content: 'Check out this screenshot of our new dashboard!',
+  platforms: ['twitter-12345678']
+}, {
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': 'YOUR_API_KEY'
+  }
+});
+
+console.log(response.data);
+// Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+> **Note:** To attach media to a post, first create the post, then use the [media upload workflow](../guides/media-uploads.md) with the returned `postGroupId`.
+
+### Post a Thread
+
+**JavaScript (fetch)**
+
+```javascript
+const response = await fetch('https://api.postpost.dev/api/v1/create-post', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': 'YOUR_API_KEY'
+  },
+  body: JSON.stringify({
+    content: `Here is a deep dive into our new feature release and what it means for developers building on our platform.
+
+We have completely redesigned the API layer to support batch operations, real-time webhooks, and granular rate limiting. This means you can now process up to 1000 requests per minute with predictable throughput.
+
+The new SDK is available for JavaScript, Python, and Go. Each SDK includes full TypeScript definitions, async support, and built-in retry logic. Check our docs for migration guides.`,
+    platforms: ['twitter-12345678']
+  })
+});
+
+const data = await response.json();
+console.log(data);
+// Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+**Python (requests)**
+
+```python
+import requests
+
+content = """Here is a deep dive into our new feature release and what it means for developers building on our platform.
+
+We have completely redesigned the API layer to support batch operations, real-time webhooks, and granular rate limiting. This means you can now process up to 1000 requests per minute with predictable throughput.
+
+The new SDK is available for JavaScript, Python, and Go. Each SDK includes full TypeScript definitions, async support, and built-in retry logic. Check our docs for migration guides."""
+
+response = requests.post(
+    'https://api.postpost.dev/api/v1/create-post',
+    headers={
+        'Content-Type': 'application/json',
+        'x-api-key': 'YOUR_API_KEY'
+    },
+    json={
+        'content': content,
+        'platforms': ['twitter-12345678']
+    }
+)
+
+data = response.json()
+print(data)
+# Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+**cURL**
+
+```bash
+curl -X POST https://api.postpost.dev/api/v1/create-post \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "content": "Here is a deep dive into our new feature release and what it means for developers building on our platform.\n\nWe have completely redesigned the API layer to support batch operations, real-time webhooks, and granular rate limiting. This means you can now process up to 1000 requests per minute with predictable throughput.\n\nThe new SDK is available for JavaScript, Python, and Go. Each SDK includes full TypeScript definitions, async support, and built-in retry logic. Check our docs for migration guides.",
+    "platforms": ["twitter-12345678"]
+  }'
+# Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+**Node.js (axios)**
+
+```javascript
+const axios = require('axios');
+
+const content = `Here is a deep dive into our new feature release and what it means for developers building on our platform.
+
+We have completely redesigned the API layer to support batch operations, real-time webhooks, and granular rate limiting. This means you can now process up to 1000 requests per minute with predictable throughput.
+
+The new SDK is available for JavaScript, Python, and Go. Each SDK includes full TypeScript definitions, async support, and built-in retry logic. Check our docs for migration guides.`;
+
+const response = await axios.post('https://api.postpost.dev/api/v1/create-post', {
+  content,
+  platforms: ['twitter-12345678']
+}, {
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': 'YOUR_API_KEY'
+  }
+});
+
+console.log(response.data);
+// Response: { "success": true, "postGroupId": "abc123..." }
+```
+
+PostPost will automatically split this into a numbered thread (e.g., `(1/3)`, `(2/3)`, `(3/3)`) at sentence boundaries.
+
+## Platform Quirks
+
+- **Emoji character counting**: Each emoji counts as 2 characters toward the 280-character limit. PostPost accounts for this automatically.
+- **PNG preferred for images**: While JPEG works, PNG images tend to render with higher quality on X due to their compression algorithm.
+- **Thread numbering**: PostPost adds `(1/N)` markers at the end of each tweet in a thread. This is appended after the content, so it reduces available character space by 10 characters per tweet.
+- **Image auto-conversion**: PostPost automatically converts all images to PNG format and resizes them to a maximum width of 1000px before uploading.
+- **Rate limits**: X enforces its own rate limits. If you hit them, PostPost will return the appropriate error from the X API.
+- **Up to 4 images**: You can attach a maximum of 4 images to a single tweet. Attempting to attach more will result in an error.
+- **Video and images are mutually exclusive**: A single tweet can contain either images or a video, but not both.
+
+## API Limits
+
+### Character Limit
+
+- **All accounts:** 280 characters (PostPost always uses the 280-character limit)
+- **Threading:** Supported - content over 280 characters will be split into a thread
+
+### Image Limits
+
+| Property | Limit |
+|----------|-------|
+| Max size | 5 MB |
+| Max count | 4 per tweet |
+| Formats | JPEG, PNG, GIF, WebP |
+
+> **Note:** All images are automatically converted to PNG (max 1000px width) via sharp before upload, regardless of the original format. This means animated GIFs will lose their animation.
+
+### Video Limits (API)
+
+| Property | Limit |
+|----------|-------|
+| **Max duration** | **2 minutes (120 seconds)** |
+| Max size | 512 MB |
+| Formats | MP4, MOV |
+
+> **Important:** The X API has a **2-minute video limit** even though the native X app allows videos up to 2:20 (140 seconds). If you attempt to upload a longer video via the API, you will receive the error: *"This user is not allowed to post a video longer than 2 minutes"*
+
+**Premium users via native app:** Up to 4 hours (not available via API)
+
+## Character Limits
+
+| Account Type | Limit |
+|-------------|-------|
+| All accounts | 280 characters |
+| Thread tweet (each part) | 280 characters, minus `(X/N)` marker space (10 chars) |
+
+## Rate Limits
+
+The underlying X API v2 has the following publishing limits based on your account tier:
+
+| Tier | Monthly Posts | Per 15 Minutes | Per 24 Hours |
+|------|--------------|----------------|--------------|
+| Free | 500 | ~17 | ~500 |
+| Basic ($100/mo) | 10,000 | 100 per user | 10,000 per app |
+| Pro ($5,000/mo) | 1,000,000 | Higher | Higher |
+
+PostPost returns the appropriate error from the X API if rate limits are exceeded. Each tweet in a thread counts as a separate post toward these limits.
+
+
+---
+

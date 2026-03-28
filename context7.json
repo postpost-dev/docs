@@ -1,0 +1,16 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "PostPost API Documentation",
+  "description": "REST API and MCP server for social media scheduling to Twitter, LinkedIn, Instagram, Threads, TikTok, YouTube, Facebook, Bluesky, Mastodon, Telegram",
+  "folders": ["docs"],
+  "excludeFolders": ["node_modules", ".git"],
+  "excludeFiles": ["package-lock.json"],
+  "rules": [
+    "PostPost REST API base URL is https://api.postpost.dev/api/v1",
+    "Authentication uses x-api-key header with API key",
+    "MCP server is at mcp.postpost.dev with type http not url",
+    "Platform IDs format: {platform}-{id} e.g. twitter-123",
+    "scheduledTime must be ISO 8601 UTC format",
+    "Media uploads use pre-signed S3 URLs via get-upload-url"
+  ]
+}

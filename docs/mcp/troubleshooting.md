@@ -1,0 +1,474 @@
+# MCP Troubleshooting Guide
+
+Common issues and solutions for PostPost MCP Server.
+
+## Connection Issues
+
+### "API key required" Error
+
+**Cause:** Missing or malformed Authorization header.
+
+**Solutions:**
+
+1. **Check header format:**
+   ```json
+   {
+     "headers": {
+       "Authorization": "Bearer sk_YOUR_API_KEY"
+     }
+   }
+   ```
+
+2. **Ensure "Bearer" prefix is included:**
+   ```text
+   Correct: "Bearer sk_abc123..."
+   Wrong: "sk_abc123..."
+   ```
+
+3. **Verify no extra spaces:**
+   ```text
+   Correct: "Bearer sk_abc123"
+   Wrong: "Bearer  sk_abc123" (double space)
+   Wrong: " Bearer sk_abc123" (leading space)
+   ```
+
+4. **Generate a new key:**
+   - Go to [postpost.dev](https://postpost.dev) → **API** in the sidebar
+   - Click "Generate New Key"
+   - Update your configuration
+
+---
+
+### Tools Not Showing in AI Client
+
+**Cause:** MCP server not loaded properly.
+
+**Solution 1: Restart your AI client**
+
+MCP servers load on startup. Close and reopen your client completely.
+
+**Solution 2: Check config file location**
+
+| Client | Config Location |
+|--------|-----------------|
+| Claude Code | `~/.claude.json` or `.mcp.json` in project |
+| Cursor | `~/.cursor/mcp.json` or `.cursor/mcp.json` in project |
+| Claude Desktop | Settings → Developer → Edit Config |
+
+**Solution 3: Validate JSON syntax**
+
+Use [jsonlint.com](https://jsonlint.com) to check for errors.
+
+Common JSON mistakes:
+```json
+// Wrong - trailing comma
+{
+  "mcpServers": {
+    "postpost": {
+      "type": "http",
+    }
+  }
+}
+
+// Wrong - missing quotes
+{
+  mcpServers: {
+    postpost: {}
+  }
+}
+
+// Wrong - single quotes
+{
+  'mcpServers': {
+    'postpost': {}
+  }
+}
+```
+
+**Solution 4: Verify config structure**
+
+Correct structure:
+```json
+{
+  "mcpServers": {
+    "postpost": {
+      "type": "http",
+      "url": "https://mcp.postpost.dev",
+      "headers": {
+        "Authorization": "Bearer sk_YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+**Solution 5: Check with Claude Code**
+
+Run `/mcp` to see connected servers and their status.
+
+---
+
+### "Connection refused" or Network Error
+
+**Cause:** Cannot reach mcp.postpost.dev.
+
+**Solution 1: Check internet connection**
+
+```bash
+ping google.com
+```
+
+**Solution 2: Verify server is running**
+
+```bash
+curl https://mcp.postpost.dev/health
+```
+
+Expected response:
+```json
+{"status":"ok","service":"postpost-mcp"}
+```
+
+**Solution 3: Check for firewall/proxy**
+
+- Ensure HTTPS (port 443) is allowed
+- Check corporate proxy settings
+- Try from a different network
+
+**Solution 4: Check DNS resolution**
+
+```bash
+nslookup mcp.postpost.dev
+```
+
+---
+
+## Authentication Issues
+
+### "Invalid API key"
+
+**Solutions:**
+
+1. **Check for typos** — Keys start with `sk_`
+
+2. **Ensure no quotes around key in header value:**
+   ```json
+   // Correct
+   "Authorization": "Bearer sk_abc123"
+
+   // Wrong - extra quotes
+   "Authorization": "Bearer \"sk_abc123\""
+   ```
+
+3. **Generate a new key:**
+   - [postpost.dev](https://postpost.dev) → **API** in the sidebar
+   - Click **Generate API Key**
+   - Update all configurations
+
+4. **Verify correct account** — Make sure you're logged into the right PostPost account
+
+---
+
+### "Unauthorized" When Calling Tools
+
+**Cause:** API key doesn't have access to the requested resource.
+
+**Solutions:**
+
+1. **Verify workspace** — Check you're connected to the correct PostPost workspace
+
+2. **Check subscription** — Ensure your plan includes API access
+
+3. **Verify resource ownership** — You can only access your own workspace's data
+
+---
+
+## Tool Errors
+
+### "Platform not found"
+
+**Cause:** Using an invalid platform ID.
+
+**Solution:**
+
+1. First call `list_connections` to get valid platform IDs
+2. Platform IDs look like: `twitter-123456`, `linkedin-abc123`
+3. Don't use generic names like "twitter" — use the full ID
+
+```text
+You: "List my connections"
+Claude: You have these platforms:
+  - linkedin-abc123
+  - twitter-xyz789
+
+You: "Schedule to linkedin-abc123"  // Correct
+You: "Schedule to linkedin"          // Wrong
+```
+
+---
+
+### "Invalid scheduled time"
+
+**Cause:** Datetime format is wrong.
+
+**Solution:**
+
+Use ISO 8601 format: `2026-03-01T14:00:00Z`
+
+**Correct formats:**
+```text
+2026-03-01T14:00:00Z           (UTC)
+2026-03-01T09:00:00-05:00      (with timezone offset)
+2026-03-01T14:00:00.000Z       (with milliseconds)
+```
+
+**Wrong formats:**
+```text
+March 1, 2026
+03/01/2026 2pm
+2026-03-01 14:00
+tomorrow at 9am (AI converts this, but tool needs ISO 8601)
+```
+
+---
+
+### "Post content too long"
+
+**Cause:** Content exceeds platform character limits.
+
+**Platform limits:**
+
+| Platform | Character Limit |
+|----------|-----------------|
+| Twitter/X | 280 |
+| LinkedIn | 3,000 |
+| Instagram | 2,200 |
+| Threads | 500 (10,000 with text attachment) |
+| Bluesky | 300 |
+| Mastodon | 500 |
+| Telegram | 4,096 |
+| Facebook | 63,206 |
+| TikTok | 2,200 |
+| YouTube | 5,000 |
+
+**Solution:** Shorten your content or use a platform with higher limits.
+
+---
+
+### "Post group not found"
+
+**Cause:** Invalid post group ID or post was deleted.
+
+**Solutions:**
+
+1. **Verify the ID** — Post IDs are MongoDB ObjectIds (e.g., `67a1b2c3d4e5f6a7b8c9d0e1`)
+2. **List posts** — Use `list_posts` to see valid post IDs
+3. **Check filters** — The post might have a different status than expected
+
+---
+
+## Session Issues
+
+### "Invalid or missing session. Send a POST without mcp-session-id to start."
+
+**Cause:** MCP session expired or not initialized.
+
+**Solution:**
+
+This usually resolves automatically. The server creates a new session on the next request.
+
+If persistent:
+
+1. **Restart your AI client**
+2. **Check your API key is still valid**
+3. **Verify server is responding:**
+   ```bash
+   curl https://mcp.postpost.dev/health
+   ```
+
+---
+
+## Configuration Mistakes
+
+### Common Configuration Errors
+
+**Wrong - missing "type":**
+```json
+{
+  "mcpServers": {
+    "postpost": {
+      "url": "https://mcp.postpost.dev"
+    }
+  }
+}
+```
+
+**Wrong - "url" type instead of "http":**
+```json
+{
+  "mcpServers": {
+    "postpost": {
+      "type": "url",
+      "url": "https://mcp.postpost.dev"
+    }
+  }
+}
+```
+
+**Wrong - missing Bearer prefix:**
+```json
+{
+  "headers": {
+    "Authorization": "sk_abc123..."
+  }
+}
+```
+
+**Wrong - trailing slash in URL:**
+```json
+{
+  "url": "https://mcp.postpost.dev/"
+}
+```
+
+**Correct configuration:**
+```json
+{
+  "mcpServers": {
+    "postpost": {
+      "type": "http",
+      "url": "https://mcp.postpost.dev",
+      "headers": {
+        "Authorization": "Bearer sk_abc123..."
+      }
+    }
+  }
+}
+```
+
+---
+
+## Plan Limit Errors
+
+### "Post limit reached" / "Schedule limit reached"
+
+**Cause:** You have exceeded a plan-based limit (monthly posts, connections, scheduled posts, or schedule horizon).
+
+**Note:** The MCP server wraps PostPost API limit errors and returns them in the `.error` field of the response (e.g., `"Post limit reached"`, `"Schedule limit reached"`). The underlying API uses HTTP `403 Forbidden`, but MCP clients will see the descriptive error string, not the HTTP status code.
+
+**Solutions:**
+
+1. **Check your plan limits:**
+   - **Starter (free):** 15 posts/month (account-wide) (dashboard only — `apiAccess: false`, `mcpAccess: false`). Starter users **cannot** use the API or MCP at all; attempting to do so returns an access error. The Starter plan also excludes Twitter/X — users must upgrade to Pro or Premium to post to Twitter. Upgrade to Pro or Premium for API/MCP access.
+   - **Pro:** 100 posts/month per connection
+   - **Premium:** 500 posts/month per connection
+2. **Upgrade your plan** — Higher tiers have higher limits
+3. **Wait for the monthly reset** — Monthly post counts reset at the start of each billing cycle
+
+---
+
+## mcporter / OpenClaw Issues
+
+### "Unknown MCP server" Error
+
+**Cause:** mcporter CLI argument parsing issue or missing Accept headers.
+
+**Solution 1: Use the configuration file instead of CLI flags**
+
+Create `config/mcporter.json`:
+```json
+{
+  "servers": {
+    "postpost": {
+      "url": "https://mcp.postpost.dev",
+      "headers": {
+        "Authorization": "Bearer sk_YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+Then run:
+```bash
+mcporter list --config config/mcporter.json
+```
+
+**Solution 2: Check mcporter version**
+
+Update to the latest version:
+```bash
+pip install --upgrade mcporter
+```
+
+**Solution 3: Test connection manually**
+
+```bash
+curl -X POST https://mcp.postpost.dev \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer sk_YOUR_API_KEY" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"test","version":"1.0.0"}}}'
+```
+
+**Note:** The `Accept` header is technically required by the MCP Streamable HTTP spec, but our server auto-fixes missing headers for compatibility with clients that don't send them.
+
+---
+
+## Debugging Tips
+
+### Enable Verbose Logging
+
+**Claude Code:**
+```bash
+CLAUDE_DEBUG=1 claude
+```
+
+**Python client:**
+```python
+import logging
+logging.basicConfig(level=logging.DEBUG)
+```
+
+### Test with cURL
+
+**Health check:**
+```bash
+curl -v https://mcp.postpost.dev/health
+```
+
+**Test authentication:**
+```bash
+curl -X POST https://mcp.postpost.dev \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer sk_YOUR_API_KEY" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"test","version":"1.0.0"}}}'
+```
+
+### Check Tool Response
+
+When a tool fails, check the response content:
+
+```python
+result = await session.call_tool("list_posts", {})
+print(result.content[0].text)  # Check for error messages
+```
+
+---
+
+## Getting Help
+
+If you're still stuck:
+
+1. **Documentation:** Check [docs.postpost.dev](https://docs.postpost.dev)
+2. **Email:** serge@postpost.dev
+3. **Twitter/X:** [@postpostinc](https://x.com/postpostinc)
+
+**When reporting issues, include:**
+
+- Your AI client (Claude Code, Cursor, etc.) and version
+- Config file (with API key redacted)
+- Full error message
+- Steps to reproduce
+- Output of `curl https://mcp.postpost.dev/health`
